@@ -1,15 +1,18 @@
-<!-- LoginView.fxml -->
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 
-<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="photo68.view.LoginController">
-    <Label text="Username:"/>
-    <TextField fx:id="usernameField"/>
-    <Label text="Password:"/>
-    <TextField fx:id="passwordField"/>
-    <Button text="Login" onAction="#login"/>
-</VBox>
+<GridPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="photo68.view.LoginController" prefWidth="400" prefHeight="250" alignment="CENTER">
+    
+    <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="usernameField" promptText="Enter username" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+    
+    <Button fx:id="login" text="Login" onAction="#login" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.columnSpan="2"/>
+    
+   <padding>
+		<Insets top="10" right="10" bottom="10" left="10"/>
+	</padding>
+</GridPane>

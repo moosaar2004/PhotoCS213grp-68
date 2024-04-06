@@ -1,8 +1,3 @@
-/*NOTES FOR OUTSELVES - TO BE REMOVED LATER
- * its the code that you wrote, just moved it this package
- * another copy still there in app package, still to see where it would be suited best
- */
-
 package photo68.model;
 
 import java.time.LocalDateTime;

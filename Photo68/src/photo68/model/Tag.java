@@ -1,15 +1,10 @@
-/*NOTES FOR OUTSELVES - TO BE REMOVED LATER
- * its the code that you wrote, just moved it this package
- * another copy still there in app package, still to see where it would be suited best
- */
-
 package photo68.model;
 
 /**
- * This class represents a basic example class.
- * It demonstrates how to implement Javadoc comments.
+ * Tag class
  * 
- * @author Oyku Pul
+ * 
+ * @author Oyku Pul, op116
  */
 public class Tag {
     private String tagName;
