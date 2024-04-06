@@ -1,4 +1,3 @@
-<!-- AdminView.fxml -->
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
@@ -7,6 +6,7 @@
 
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="photo68.view.AdminController">
     <ListView fx:id="userListView"/>
-    <Button text="Create User" onAction="#createUser"/>
-    <Button text="Delete User" onAction="#deleteUser"/>
+    <Button fx:id="create" text="Create User" onAction="#createUser"/>
+    <Button fx:id="delete" text="Delete User" onAction="#deleteUser"/>
+    <Button fx:id="logout" text="Logout" onAction="#logout"/>
 </VBox>

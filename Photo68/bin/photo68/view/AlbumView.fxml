@@ -1,11 +1,10 @@
-<!-- AlbumView.fxml -->
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="photos68.view.AlbumController">
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="photo68.view.AlbumController">
     <ListView fx:id="photoListView"/>
     <Button text="Add Photo" onAction="#addPhoto"/>
     <Button text="Remove Photo" onAction="#removePhoto"/>
