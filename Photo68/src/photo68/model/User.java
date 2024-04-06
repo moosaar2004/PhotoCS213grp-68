@@ -133,7 +133,7 @@
      public void showAllAlbums()
      {
         for (Album album : userAlbums)
-            System.out.println(album.nameOfAlbum);
+            System.out.println(album.getNameOfAlbum());
      }
  
      /**
