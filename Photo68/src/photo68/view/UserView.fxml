@@ -6,7 +6,8 @@
 
 <VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="photo68.view.UserController">
     <ListView fx:id="albumListView"/>
-    <Button text="Create Album" onAction="#createAlbum"/>
-    <Button text="Delete Album" onAction="#deleteAlbum"/>
-    <Button text="Open Album" onAction="#openAlbum"/>
+    <Button fx:id="create" text="Create Album" onAction="#createAlbum"/>
+    <Button fx:id="delete" text="Delete Album" onAction="#deleteAlbum"/>
+    <Button fx:id="open" text="Open Album" onAction="#openAlbum"/>
+    <Button fx:id="logout" text="Logout" onAction="#logout"/>
 </VBox>
