@@ -1,5 +1,6 @@
 package photo68.model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
  * 
  * @author Oyku Pul
  */
-public class Photo {
+public class Photo implements Serializable {
     private String filePath;
     private String caption;
     private LocalDateTime dateTaken;

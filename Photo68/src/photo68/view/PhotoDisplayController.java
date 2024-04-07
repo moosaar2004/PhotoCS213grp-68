@@ -16,4 +16,5 @@ public class PhotoDisplayController {
 
     @FXML
     private Label tagsLabel;
+
 }

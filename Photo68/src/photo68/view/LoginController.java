@@ -51,7 +51,7 @@ public class LoginController {
                 return;
             } else {
 
-                openUserView(currentUser, e);
+                openUserView(currentUser, e, usersList);
             }
         }
     }
@@ -69,22 +69,21 @@ public class LoginController {
 
             // Set the new scene
             stage.setScene(scene);
+            stage.setResizable(true);
             stage.show();
         } catch (IOException event) {
             event.printStackTrace();
         }
     }
 
-    private void openUserView(User user, ActionEvent e) {
+    private void openUserView(User user, ActionEvent e, ArrayList<User> usersList) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("UserView.fxml"));
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("UserView.fxml")); // Set the location before loading
             Parent root = loader.load();
-
             // Pass the authenticated user to the UserController
-            UserController controller = new UserController();
-            loader.setController(controller);
-            controller.initData(user);
-
+            UserController controller = loader.getController();
+            controller.initData(user, usersList);
             // Create a new scene with the loaded FXML file
             Scene scene = new Scene(root);
 
@@ -93,6 +92,7 @@ public class LoginController {
 
             // Set the new scene
             stage.setScene(scene);
+            stage.setResizable(true);
             stage.show();
         } catch (IOException event) {
             event.printStackTrace();
