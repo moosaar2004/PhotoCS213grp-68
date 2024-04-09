@@ -1,17 +1,3 @@
-/*EXPLANATIONS FOR OUTSELVES - TO BE REMOVED LATER
- * 
- * Plan is to have this user abstract class and then create two subclasses that extend this
- * one is for reguler users and the other for admin users
- * 
- * This class also implements the Serializable interface
- * save method serializes the User object and saves it to a file specified by storeDirectory and fileName.
- * load method deserializes the User object from the file specified by storeDirectory and fileName.
- * Allowing application to save and load user data to and from a file. 
- * 
- * inRangePhotos method to still be worked on/looked at
- * ^that is one way to search photos need to implement the other ways to search as per directions posted
- */
-
 package photo68.model;
 
 import java.io.Serializable;
@@ -149,7 +135,6 @@ public class User implements Serializable {
         return userAlbums.get(i);
     }
 
-    // Method needs to be worked on
 
     // /**
     // * Get photos within the specified time(date) range
@@ -175,7 +160,5 @@ public class User implements Serializable {
     // }
     // return inRangePhotos;
     // }
-
-    // abstract methods that will be implemented in subclasses
 
 }

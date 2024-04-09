@@ -1,9 +1,14 @@
 package photo68.view;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import javafx.collections.FXCollections;
@@ -16,8 +21,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextInputDialog;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import photo68.model.Album;
+import photo68.model.Photo;
+import photo68.model.Tag;
 import photo68.model.User;
 
 /**
@@ -36,6 +44,8 @@ public class UserController {
     @FXML
     Button renameButton;
     @FXML
+    Button handleSearchButton;
+    @FXML
     Button logout;
     private ObservableList<String> albumListObservable;
     private User currentUser;
@@ -47,8 +57,9 @@ public class UserController {
      *
      * @param user           the current user
      * @param controlLolerList the list of all users
-     */
+     */    
     public void initData(User user, ArrayList<User> controlLolerList) {
+        controllerList = loadUsersFromFile();
         this.currentUser = user;
         this.controllerList = controlLolerList;
         // Use currentUser to initialize the view with user-specific data
@@ -188,6 +199,36 @@ public class UserController {
         saveUsers();
     }
 
+
+    /**
+     * method to handle search button
+     */
+    @FXML
+    public void handleSearchButton() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/photo68/view/SearchDialogView.fxml"));
+            Parent root = loader.load();
+
+            // Create the dialog stage
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Search Photos");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(handleSearchButton.getScene().getWindow());
+            Scene scene = new Scene(root);
+            dialogStage.setScene(scene);
+
+            // Set the controller and initialize the dialog stage
+            SearchDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage);
+            controller.initData(currentUser, controllerList);
+            // Show the dialog and wait for the user response
+            dialogStage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * Handles the "Logout" button click.
      * Saves the updated user data and switches the view to the LoginView.
@@ -233,6 +274,22 @@ public class UserController {
         alert.setHeaderText(null);
         alert.setContentText(content);
         alert.showAndWait();
+    }
+
+    /**
+     * loads user from file
+     * 
+     * @return user from file, otherfile null if none exist
+     */
+    @SuppressWarnings("unchecked")
+    public ArrayList<User> loadUsersFromFile() {
+        // Deserialize users from a file
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("data/users.dat"))) {
+            return (ArrayList<User>) ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     /**

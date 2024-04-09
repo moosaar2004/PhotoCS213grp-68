@@ -5,6 +5,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Base Strcuture Class for Album
+ * 
+ * @author Ali Rehman, amr567
+ */
 public class Album implements Serializable {
     private String nameOfAlbum;
     private ArrayList<Photo> listOfPhotos;
@@ -68,6 +73,14 @@ public class Album implements Serializable {
      */
     public ArrayList<Photo> getListOfPhotos() {
         return listOfPhotos;
+    }
+
+    /*
+     * method to set the list of photos in the album
+     * 
+     */
+    public void setListOfPhotos(ArrayList<Photo> results) {
+        this.listOfPhotos = results;
     }
 
     /**
@@ -145,10 +158,14 @@ public class Album implements Serializable {
     }
 
     /**
-     *method to give string representation of AlbumName
-     *
-     * @return currentAlbum name
+     * method to set the number of photos
+     * 
+     * @param i the number of photos to be set
      */
+    public void setNumOfPhotos(int i) {
+        this.numOfPhotos = i;
+    }
+
     @Override
     public String toString() {
         return getCurrentAlbumName();

@@ -10,6 +10,12 @@ import javafx.stage.Stage;
 import photo68.model.User;
 import photo68.view.LoginController;
 
+/**
+ * For this project:
+ * 
+ * @author Ali Rehman
+ * @author Oyku Pul
+ */
 public class Photos extends Application {
 
 	/**
@@ -20,17 +26,7 @@ public class Photos extends Application {
 	 * @throws Exception if an error occurs while loading the FXML file
 	 */
 	public void start(Stage primaryStage) throws Exception {
-		// Just for intialization for stock
-		/*
-		 * ArrayList<User> ba = new ArrayList<>();
-		 * User stock = new User("stock");
-		 * ba.add(stock);
-		 * FXMLLoader loader1 = new
-		 * FXMLLoader(getClass().getResource("LoginView.fxml"));
-		 * LoginController controller = new LoginController();
-		 * loader1.setController(controller);
-		 * controller.saveUsersToFile(ba);
-		 */
+
 		// create FXML loader
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("/photo68/view/LoginView.fxml"));
@@ -45,13 +41,13 @@ public class Photos extends Application {
 		primaryStage.show();
 	}
 
+
 	/**
 	 * The main method that launches the JavaFX application.
 	 *
 	 * @param args the command-line arguments
 	 */
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		launch(args);
 	}
 

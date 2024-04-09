@@ -8,8 +8,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
- * This class represents a basic example class.
- * It demonstrates how to implement Javadoc comments.
+ * Base Structure class for Photo
  * 
  * @author Oyku Pul
  */
@@ -90,7 +89,7 @@ public class Photo implements Serializable {
         this.dateTaken = dateTaken;
     }
 
-    /**
+     /**
      * getter for tags on photo
      *
      * @return tags list
@@ -116,7 +115,7 @@ public class Photo implements Serializable {
     public void addTag(Tag tag) {
         tags.add(tag);
     }
-
+    
     /**
      * method to remove a tag on a photo
      *

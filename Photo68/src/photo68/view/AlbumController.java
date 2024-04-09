@@ -31,6 +31,9 @@ import photo68.model.Tag;
 import photo68.model.User;
 import javafx.scene.*;
 
+/**
+ * Controler for Album
+ */
 public class AlbumController {
     @FXML
     private ListView<Photo> photoListView;
@@ -143,7 +146,7 @@ public class AlbumController {
      * Adds the photo to the current album and updates the UI.
      *
      * @param event the ActionEvent triggered by clicking the "Add Photo" button
-     */
+     */    
     @FXML
     public void addPhoto(ActionEvent event) {
         // Create a file chooser dialog to select a photo file
@@ -190,7 +193,7 @@ public class AlbumController {
     /**
      * Handles the event when the "Remove Photo" button is clicked.
      * Removes the selected photo from the current album and updates the UI.
-     */
+     */    
     @FXML
     public void removePhoto() {
         // Handle removing photo lo// Check if a photo is selected
@@ -220,7 +223,7 @@ public class AlbumController {
      * Handles the event when the "Caption Photo" button is clicked.
      * Creates a text input dialog to allow the user to edit the caption of the selected photo.
      * Updates the caption of the selected photo and refreshes the list view.
-     */
+     */    
     @FXML
     public void captionPhoto() {
         Photo selectedPhoto = photoListView.getSelectionModel().getSelectedItem();
@@ -326,7 +329,7 @@ public class AlbumController {
 
     }
 
-    /**
+     /**
      * Handles the event when the "Remove Tag" button is clicked.
      * Creates a dialog to allow the user to select a tag to remove from the selected photo.
      * Removes the selected tag from the photo and updates the tag label.
@@ -386,7 +389,7 @@ public class AlbumController {
                     // Create an image view to display the image
                     imageView = new ImageView();
                     imageView.setFitWidth(700); // Set width of the image view
-                    imageView.setFitHeight(540); // Set height of the image view
+                    imageView.setFitHeight(500); // Set height of the image view
 
                     // Display tags
                     tagLabel = new Label();
@@ -394,7 +397,6 @@ public class AlbumController {
                     // Create a label to display the caption
                     captionLabel = new Label();
                     captionLabel.setStyle("-fx-font-size: 14px;");
-                    //Label for displaying date when in photo display mode
                     dateLabel = new Label();
                     dateLabel.setStyle("-fx-font-size: 14px;");
 
@@ -445,7 +447,7 @@ public class AlbumController {
      * Saves the updated user list to the file and switches the view to the UserView.
      *
      * @param event the ActionEvent triggered by clicking the "Go Back" button
-     */
+     */    
     @FXML
     public void goBack(ActionEvent event) {
         saveUsersToFile(controllerList);
@@ -477,7 +479,7 @@ public class AlbumController {
      * Retrieves the selected photo and the source album.
      * Prompts the user to select the destination album and moves the photo to the new album.
      * Updates the UI to reflect the changes.
-     */
+     */    
     @FXML
     public void move() {
         // Retrieve the selected photo
@@ -641,16 +643,18 @@ public class AlbumController {
             if (captionLabel != null) {
                 captionLabel.setText("Caption: " + selectedPhoto.getCaption());
             }
+
             dateLabel.setText("Date: " + selectedPhoto.getDateTaken());
         }
     }
+
 
     /**
      * Finds a Photo object by its file path in the list of users and their albums.
      *
      * @param filePath the file path of the photo to find
      * @return the Photo object with the given file path, or null if not found
-     */
+     */    
     private Photo findPhotoByFilePath(String filePath) {
         for (User user : controllerList) {
             for (Album album : user.getUserAlbums()) {

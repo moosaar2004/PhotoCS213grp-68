@@ -16,6 +16,9 @@ import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
 import photo68.model.User;
 
+/**
+ * Controler for Admmin Attributes
+ */
 public class AdminController {
     @FXML
     Button createButton;
@@ -30,7 +33,7 @@ public class AdminController {
     private ObservableList<String> userListObservable;
 
     /**
-     * method to set up the initial state
+     * method to set up initial state
      */
     public void initialize() {
         // Load users from file during initialization
@@ -143,7 +146,7 @@ public class AdminController {
      * utility method to logout user
      *
      * @param e
-     */
+     */    
     @FXML
     public void logout(ActionEvent e) {
         Button b = (Button) e.getSource();
@@ -181,7 +184,7 @@ public class AdminController {
         alert.showAndWait();
     }
 
-    /**
+     /**
      * utility method to check if a user exists
      *
      * @param username

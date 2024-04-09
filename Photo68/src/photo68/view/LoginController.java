@@ -44,7 +44,7 @@ public class LoginController {
      * Retrieves the username from the text field, checks if the user is an admin or a regular user, and opens the appropriate view.
      *
      * @param e the ActionEvent triggered by the login button click
-     */
+     */    
     @FXML
     public void login(ActionEvent e) {
         Button b = (Button) e.getSource();
@@ -73,7 +73,7 @@ public class LoginController {
      * Opens the AdminView by loading the FXML file and creating a new scene.
      *
      * @param e the ActionEvent that triggered the method
-     */
+     */    
     private void openAdminView(ActionEvent e) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminView.fxml"));
@@ -100,7 +100,7 @@ public class LoginController {
      * @param user       the authenticated user
      * @param e          the ActionEvent that triggered the method
      * @param usersList  the list of users
-     */
+     */    
     private void openUserView(User user, ActionEvent e, ArrayList<User> usersList) {
         try {
             FXMLLoader loader = new FXMLLoader();
@@ -129,7 +129,7 @@ public class LoginController {
      *
      * @param title   the title of the alert
      * @param message the message to be displayed in the alert
-     */
+     */    
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);

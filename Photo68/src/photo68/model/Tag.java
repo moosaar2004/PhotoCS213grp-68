@@ -3,7 +3,7 @@ package photo68.model;
 import java.io.Serializable;
 
 /**
- * Tag class
+ * Base Structure for Tag
  * 
  * 
  * @author Oyku Pul, op116
@@ -43,7 +43,7 @@ public class Tag implements Serializable {
         return tagValue;
     }
 
-    /**
+     /**
      * methid to set tag value
      *
      * @param tagValue
